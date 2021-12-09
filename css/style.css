@@ -1,0 +1,39 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/* HEADER */
+header{
+    padding: 0 30px;
+}
+.logo{
+    height: 70px;
+    margin: auto;
+    display: block;
+}
+/* MAIN */
+.filters{
+    text-align: center;
+}
+button{
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+.to-do-area{
+    width:40%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: lightgrey;
+}
+.to-do-area li{
+    list-style: none;
+    padding: 10px 20px;
+    border-bottom: 1px solid black;
+}
+.todo-action{
+    float:right;
+}
