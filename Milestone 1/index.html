@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script  text="javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,7 +14,9 @@
         <img class="logo" src="https://www.boolean.careers/images/misc/logo.png" alt="logo">
     </header>
     <main>
+        <!-- contenitore dove si attuano gli elementi di VUE -->
         <div id="#root">
+            <!-- Contenitore impostazione della lista -->
             <div class="filters">
                 <!-- <h1>{{message}}</h1> -->
             <input type="text" placeholder="Aggiungi ToDo">
@@ -22,13 +24,15 @@
             </div>
             <div class="to-do-area">
                 <ul>
-                    <li>
-                        Fare la spesa
+                    <!-- singola TODO -->
+                    <li v-for="todo in todoList">
+                        {{ todo }}
                         <div class="todo-action">
                             <i class="far fa-trash-alt"></i>
                         </div>
                         
                     </li>
+                    <!-- fine singola TODO -->
                     <li>
                         fare il caffè
                     </li>

@@ -18,7 +18,15 @@ const app = new Vue(
     {
         el:'#root',
         data:{
-            message: 'sono un testo Vue'
-        }
+            message: 'sono un testo Vue',
+            todoList:[
+                'Fare la spesa',
+                'Portare fuori il cane',
+                'Preparare il caffè',
+            ]
+        },
+        methods:{
+
+        },
     }
 );
