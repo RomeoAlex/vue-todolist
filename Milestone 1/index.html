@@ -11,16 +11,17 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="https://www.boolean.careers/images/misc/logo.png" alt="logo">
+        <img class="logo" src="http://www.boolean.careers/images/misc/logo.png" alt="logo">
     </header>
     <main>
         <!-- contenitore dove si attuano gli elementi di VUE -->
-        <div id="#root">
+        <div id="root">
             <!-- Contenitore impostazione della lista -->
             <div class="filters">
                 <!-- <h1>{{message}}</h1> -->
-            <input type="text" placeholder="Aggiungi ToDo">
-            <button>Aggiungi</button>
+                <!-- @keyup.enter="addTodo" quando rilascio enter il comando addTodo viene inviato -->
+            <input @keyup.enter="addTodo" v-model="newTodo" type="text" placeholder="Aggiungi ToDo">
+            <button @click="addTodo">Aggiungi</button>
             </div>
             <div class="to-do-area">
                 <ul>
@@ -33,12 +34,6 @@
                         
                     </li>
                     <!-- fine singola TODO -->
-                    <li>
-                        fare il caffè
-                    </li>
-                    <li>
-                        fare i compiti
-                    </li>
                 </ul>
 
             </div>

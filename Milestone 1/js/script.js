@@ -17,16 +17,24 @@ Vue.config.devtools = true;
 const app = new Vue(
     {
         el:'#root',
-        data:{
-            message: 'sono un testo Vue',
-            todoList:[
+        data: {
+            newTodo:'',
+            todoList: [
                 'Fare la spesa',
                 'Portare fuori il cane',
-                'Preparare il caffè',
-            ]
+                'Preparare il caffè'
+            ],
         },
         methods:{
+            addTodo: function(){
+                // utilizzo trim per rimuovere gli spazi
+                const newTrimTodo = this.newTodo.trim();
+                if(newTrimTodo.length > 0 )
+                this.todoList.push(newTrimTodo);
+                // riporto input vuoto dopo aver inserito un nuovo todo
+                this.newTodo =''; 
+            }
 
-        },
+        }
     }
 );
