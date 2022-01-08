@@ -44,11 +44,16 @@ const app = new Vue(
                 // devo pushare un oggetto
                 this.todoList.push({
                     text:newTrimTodo,
-                    done:false,
+                    done:false
                 });
                 // riporto input vuoto dopo aver inserito un nuovo todo
                 this.newTodo =''; 
             },
+            doneNotDone: function(index){
+                // devo puntare all'indice corretto dove sto utilizzando la funzione richiamata con il @click
+                // con la negazione faccio l'opposto perciò in base al dato impostato ogni click diventerà l'opposto
+                this.todoList[index].done = !this.todoList[index].done;
+            }
         }
     }
 );

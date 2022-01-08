@@ -27,7 +27,7 @@
                 <ul>
                     <!-- singola TODO -->
                     <!-- aggiungo l'indice per utilizzarlo nella funzione removeTodo -->
-                    <li v-for="(todo, index) in todoList" :class="{'done': todo.done === true}">
+                    <li v-for="(todo, index) in todoList" :class="{'done': todo.done === true}" @click="doneNotDone(index)">
                         {{ todo.text }}
                         <div class="todo-action">
                             <i @click="removeTodo(index)" class="far fa-trash-alt"></i>
