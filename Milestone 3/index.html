@@ -20,16 +20,17 @@
             <div class="filters">
                 <!-- <h1>{{message}}</h1> -->
                 <!-- @keyup.enter="addTodo" quando rilascio enter il comando addTodo viene inviato -->
-            <input type="text" placeholder="Aggiungi ToDo">
-            <button >Aggiungi</button>
+            <input @keyup.enter="addTodo" v-model="newTodo" type="text" placeholder="Aggiungi ToDo">
+            <button @click="addTodo">Aggiungi</button>
             </div>
             <div class="to-do-area">
                 <ul>
                     <!-- singola TODO -->
-                    <li v-for="todo in todoList" :class="{'done': todo.done === true}">
+                    <!-- aggiungo l'indice per utilizzarlo nella funzione removeTodo -->
+                    <li v-for="(todo, index) in todoList" :class="{'done': todo.done === true}">
                         {{ todo.text }}
                         <div class="todo-action">
-                            <i class="far fa-trash-alt"></i>
+                            <i @click="removeTodo(index)" class="far fa-trash-alt"></i>
                         </div>
                         
                     </li>

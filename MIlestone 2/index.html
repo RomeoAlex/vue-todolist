@@ -26,10 +26,11 @@
             <div class="to-do-area">
                 <ul>
                     <!-- singola TODO -->
-                    <li v-for="todo in todoList" :class="{'done': todo.done === true}">
+                    <!-- aggiungo l'indice per utilizzarlo nella funzione removeTodo -->
+                    <li v-for="(todo, index) in todoList" :class="{'done': todo.done === true}">
                         {{ todo.text }}
                         <div class="todo-action">
-                            <i class="far fa-trash-alt"></i>
+                            <i @click="removeTodo(index)" class="far fa-trash-alt"></i>
                         </div>
                         
                     </li>
